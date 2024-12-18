@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>簡易ブラックジャック</title>
+</head>
+<body>
+    <h1 id="Title">簡易ブラックジャック</h1>
+    <div id="Score">あなたのスコア: </div>
+    <div id="Deeler">ディーラーのスコア: </div>
+    <button id="Hitbutton" onclick="Hit()">ヒット</button>
+    <button id="Standbutton" onclick="Stand()">スタンド</button>
+    <button id="Retrybutton" onclick="Retry()">リトライ</button>
+    <div class="Textscontainer">
+    <p id="Win">勝ち！</p>
+    <p id="Lose">負け</p>
+    <p id="Draw">引き分け</p>
+    <p id="Over">オーバー！</p>
+    </div>
+
+    <script>
+            var
+            score = 0,
+            deeler = 0,
+            fakescore = 0;
+            deeler = getrandom(15,20)
+            fakescore = getrandom(1,19)
+            updateScore()
+
+        function Hit() {
+            if(score < 22){
+            score = score + getrandom(1,11);
+            updateScore();
+        }}
+
+        function Stand() {
+            deeler = deeler + fakescore;
+            updateScore();
+        if(score < (deeler - fakescore)){
+            lose();
+            resetvisible();
+        }if(score > (deeler - fakescore)){
+            win();
+            resetvisible();
+        }if(score == (deeler - fakescore)){
+            draw();
+            resetvisible();
+        }}
+        function getrandom(min,max){
+            var RandomScore = 0;
+            var RandomScore = Math.floor(Math.random() * (max + 1 - min)) + min;
+           return RandomScore;
+        }
+
+        function updateScore() {
+            document.getElementById("Score").innerText = "あなたのスコア: " + score;
+            document.getElementById("Deeler").innerText = "ディーラーのスコア: " + (deeler - fakescore);
+            if(score > 21){
+                over();
+                resetvisible();
+            }
+        }
+        function Retry(){
+            score = 0,
+            deeler = 0,
+            fakescore = 0;
+            deeler = getrandom(15,20)
+            fakescore = getrandom(1,19)
+            document.getElementById("Retrybutton").style.visibility="hidden";
+            document.getElementById("Win").style.visibility="hidden";
+            document.getElementById("Lose").style.visibility="hidden";
+            document.getElementById("Draw").style.visibility="hidden";
+            document.getElementById("Over").style.visibility="hidden";
+            updateScore()
+        }
+        function resetvisible(){
+            document.getElementById("Retrybutton").style.visibility="visible";
+        }
+        function win(){
+            document.getElementById("Win").style.visibility="visible";
+        }
+        function lose(){
+            document.getElementById("Lose").style.visibility="visible";
+        }
+        function draw(){
+            document.getElementById("Draw").style.visibility="visible";
+        }
+        function over(){
+            document.getElementById("Over").style.visibility="visible";
+        }
+    </script>
+    </body>
+</html>

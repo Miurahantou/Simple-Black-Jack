@@ -1,0 +1,91 @@
+@charset "UTF-8";
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+}
+.Textscontainer{
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Title{
+    color: #333;
+}
+#Score{
+    font-size: 24px;
+    margin: 20px;
+    color: #007BFF;
+}
+#Deeler{
+        font-size: 24px;
+        margin: 20px;
+        color: red;
+}
+#Hitbutton{
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#Standbutton{
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+#Retrybutton{
+    visibility: hidden;
+    position: absolute;
+    top: 300px;
+    background-color: #ff0000;
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+#Win{
+    color: black;
+    font-size: 70px;
+    position: absolute;
+    top: 400px;
+    visibility: hidden;
+    background-color: orange;
+}
+#Lose{
+    color: black;
+    font-size: 70px;
+    position: absolute;
+    top: 400px;
+    visibility: hidden;
+    background-color: blue;
+}
+#Draw{
+    color: black;
+    font-size: 70px;
+    position: absolute;
+    top: 400px;
+    visibility: hidden;
+    background-color: lightgreen;
+}
+#Over{
+    color: black;
+    font-size: 70px;
+    position: absolute;
+    top: 400px;
+    visibility: hidden;
+    background-color:red;
+}
